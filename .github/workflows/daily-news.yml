@@ -1,0 +1,43 @@
+
+name: Daily News Podcast
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-news-podcast
+  cancel-in-progress: false
+
+jobs:
+  produce-news:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Get News App project
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check news generator
+        run: node --check generate-news.mjs
+
+      - name: Check audio generator
+        run: node --check generate-podcast.mjs
+
+      - name: Confirm editorial plan
+        run: test -s editorial-plan.md
+
+      - name: Confirm available audio tools
+        run: ffmpeg -version
+

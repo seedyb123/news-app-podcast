@@ -1,0 +1,12 @@
+# Local secrets written by `elevenlabs onboard`
+/.env.local
+
+node_modules/
+audio/
+.DS_Store
+
+.env.local
+.env.local.save
+
+# Editor backup files
+*.save
