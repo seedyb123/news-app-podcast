@@ -1,10 +1,4 @@
-      - name: Install FFmpeg
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y ffmpeg
 
-      - name: Confirm available audio tools
-        run: ffmpeg -version
 name: Daily News Podcast
 
 on:
@@ -19,7 +13,7 @@ concurrency:
 
 jobs:
   produce-news:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
 
     steps:
@@ -43,6 +37,11 @@ jobs:
 
       - name: Confirm editorial plan
         run: test -s editorial-plan.md
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
 
       - name: Confirm available audio tools
         run: ffmpeg -version
