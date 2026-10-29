@@ -23,22 +23,43 @@ jobs:
           ref: main
           persist-credentials: true
 
-      - name: Check whether today's episode exists
+      - name: Check daily production status
         id: episode-check
         shell: bash
         run: |
           DATE_CODE=$(TZ=Europe/London date +%d%m%y)
           DAY=$(TZ=Europe/London date +%A | tr '[:upper:]' '[:lower:]')
           EPISODE="${DAY}-${DATE_CODE}-news"
+          ATTEMPT=".production-attempts/${DATE_CODE}.txt"
+
           echo "episode=$EPISODE" >> "$GITHUB_OUTPUT"
+          echo "attempt=$ATTEMPT" >> "$GITHUB_OUTPUT"
 
           if grep -Fq "news-app-${DAY}-${DATE_CODE}</guid>" feed.xml; then
-            echo "Today's episode is already published."
+            echo "Today's episode already published."
+            echo "should_run=false" >> "$GITHUB_OUTPUT"
+          elif [ -f "$ATTEMPT" ]; then
+            echo "Today's production already attempted."
             echo "should_run=false" >> "$GITHUB_OUTPUT"
           else
-            echo "No episode published for today."
+            echo "Ready for today's first production attempt."
             echo "should_run=true" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Record production attempt before API calls
+        if: steps.episode-check.outputs.should_run == 'true'
+        run: |
+          mkdir -p .production-attempts
+
+          echo "Started $(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+            > "${{ steps.episode-check.outputs.attempt }}"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add "${{ steps.episode-check.outputs.attempt }}"
+          git commit -m "Record production attempt ${{ steps.episode-check.outputs.episode }}"
+          git push origin HEAD:main
 
       - name: Set up Node.js
         if: steps.episode-check.outputs.should_run == 'true'
