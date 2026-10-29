@@ -1,0 +1,24 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>News App</title>
+    <link>https://seedyb123.github.io/news-app-podcast/</link>
+    <description>A personal news podcast exploring the week's developments, competing arguments and wider perspectives.</description>
+    <language>en-gb</language>
+    <itunes:author>News App</itunes:author>
+    <itunes:summary>Evidence-led news and analysis from diverse international sources.</itunes:summary>
+    <itunes:explicit>false</itunes:explicit>
+
+    <item>
+      <title>Thursday — Work, Society &amp; Policy</title>
+      <description>A review of developments in work, society and public policy, including competing perspectives and underreported stories.</description>
+      <pubDate>Thu, 29 Oct 2026 12:00:00 GMT</pubDate>
+      <guid isPermaLink="false">news-app-thursday-291026</guid>
+      <enclosure url="https://seedyb123.github.io/news-app-podcast/thursday-291026-news.mp3"
+                 length="15707783"
+                 type="audio/mpeg"/>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+  </channel>
+</rss>
