@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
     <title>Escape the Cave</title>
-    <itunes:image href="https://seedyb123.github.io/news-app-podcast/escape-the-cave-cover.png"/>
+<itunes:image href="https://seedyb123.github.io/news-app-podcast/escape-the-cave-cover-v2.jpg"/>
     <link>https://seedyb123.github.io/news-app-podcast/</link>
     <description>A daily scrape of different newsworthy themes for the week, presenting divergent views to guard against the echo chamber.</description>
     <language>en-gb</language>
