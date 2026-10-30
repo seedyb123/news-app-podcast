@@ -7,6 +7,9 @@
     <description>A daily scrape of different newsworthy themes for the week, presenting divergent views to guard against the echo chamber.</description>
     <language>en-gb</language>
     <itunes:author>Escape the Cave</itunes:author>
+<itunes:category text="News">
+  <itunes:category text="News Commentary"/>
+</itunes:category>
     <itunes:summary>Evidence-led news and analysis from diverse international sources.</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
 
