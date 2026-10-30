@@ -1,152 +1,160 @@
+# News App — Editorial & Production Principles
 
-# News App — Weekly Editorial Plan & Script Generation Principles
+**Version:** 1.4
+**Updated:** 30 October 2026
+**Purpose:** Single authoritative specification for research, script generation and automated publication.
 
-Version: 1.1
-Updated: 29 October 2026
-Automation additions: 29 October 2026
+## 1. Editorial principles
 
-## Purpose
+Produce an evidence-led news podcast in British English, narrated by a single presenter.
 
-Produce a personalised, evidence-led news podcast that explains important developments, presents competing interpretations fairly, draws on politically and geographically diverse journalism, and discovers overlooked international stories.
+Prioritise accuracy, relevance, diverse perspectives, international coverage and intellectual curiosity.
 
-Editorial value determines episode length. Never add material merely to fill time.
+Never invent facts, events, quotations, statistics, references or arguments. Distinguish reporting, opinion, allegations, forecasts and interpretation.
 
-Use British English and a single, natural-sounding narrator.
+Present competing perspectives only where supported by evidence. Avoid artificial balance.
 
-## Weekly schedule
+Episode length is determined by substantive content, with a target of 20 minutes, with a +/- 5mins. However, this is target and guidance, there is no minimum word count.
 
-Monday: World & Geopolitics
-Tuesday: Business & Economics
-Wednesday: Technology & AI
-Thursday: Work, Society & Policy
-Friday: Ideas & Long-form Analysis
-Saturday: Culture, Science & Discovery
-Sunday: Missed News: Around the World
+## 2. Weekly schedule
 
-## Monday–Saturday source policy
+| Day | Theme |
+|---|---|
+| Monday | World & Geopolitics |
+| Tuesday | Business & Economics |
+| Wednesday | Technology & AI |
+| Thursday | Culture,Society & Work |
+| Friday | Ideas & Long-form Analysis |
+| Saturday | Science & Discovery |
+| Sunday | Missed News: Around the World |
 
-Research all seven mandatory publications:
-- BBC
-- CNN
-- Financial Times
-- The Guardian
-- The Wall Street Journal
-- The Economist
-- Al Jazeera
+**Research window:** Preceding seven days.
 
-Additionally select and research five relevant publications per episode, considering specialist knowledge, political diversity (including socialist and right-wing perspectives), geographical diversity, original reporting and editorial quality.
+## 3. Source selection
 
-Consulted does not mean used. Name in the narration only publications actually relied upon. Record all consulted sources separately, identifying those used.
+### Monday–Saturday
 
-Never claim to have read an inaccessible article. Disclose paywall and access limitations.
+Attempt searches across these principle seven publications:
 
-## Monday–Saturday episode structure
+BBC, CNN, Financial Times, The Guardian, The Wall Street Journal, The Economist and Al Jazeera.
 
-1. Opening & Introduction — up to 2 minutes.
-   Introduce the day's subject, summarise major developments and name every publication actually used.
+Additionally select five distinct publications relevant to the theme, prioritising specialist expertise, original reporting, political diversity and international perspectives.
 
-2. Main Development — up to 5 minutes.
-   Explain the most consequential verified development, its context and significance.
+**Target: 12 publication-level search attempts.**
 
-3. Arguments For & Against — up to 5 minutes.
-   Explain substantive competing interpretations, distinguishing evidence from opinion. Avoid false balance.
+### Sunday
 
-4. Other Developments — up to 5 minutes.
-   Cover other important developments in the day's subject.
+Sunday is a global news roundup rather than a thematic debate.
 
-5. Wider & Underreported Perspectives — up to 5 minutes.
-   Include overlooked reporting and relevant international perspectives.
+Research local and national reporting across the **G20 countries excluding the US and UK**:
 
-6. Summary & Media Bias Assessment — up to 2 minutes.
-   Summarise the findings and assess differences in framing among sampled sources. Where supported, classify perspectives as supportive, critical, mixed or neutral. Do not generalise the sample to all media.
+Argentina, Australia, Brazil, Canada, China, France, Germany, India, Indonesia, Italy, Japan, Mexico, Russia, Saudi Arabia, South Africa, South Korea and Türkiye.
 
-Maximum episode length: 22 minutes, not a target. Shorter is preferable when justified by the material.
+Do not consult the seven fixed Monday–Saturday publications.
 
-## Sunday — Missed News: Around the World
+Research all 17 countries, but select only genuinely significant stories. Compare selections with the previous six episodes and avoid repetition unless there is a materially different local perspective or consequence.
 
-Research important developments from the preceding seven days across this pool of 17 G20 countries:
+## 4. Episode structure
 
-Argentina, Brazil, Canada, Mexico,
-France, Germany, Italy, Russia,
-China, India, Indonesia, Japan, South Korea,
-Saudi Arabia, Türkiye, South Africa, Australia.
+### Monday–Saturday
 
-The European Union and African Union are not additional countries.
+| Section | Guiding duration |
+|---|---|
+| Opening, headlines and sources used | 2 minutes |
+| Main development | 5 minutes |
+| Evidence-based competing arguments | 5 minutes |
+| Other developments | 5 minutes |
+| Wider and underreported perspectives | 5 minutes |
+| Summary and media framing assessment | 2 minutes |
 
-Do not use the seven mandatory Monday–Saturday publications for Sunday research.
+Assess sources where evidence supports it and outline how much of the media landscape is in support of one side of a debate vs the other.
 
-Instead consult original reporting from local, national and regional publications based in the countries above. Select a politically and geographically varied range of credible sources.
+### Sunday
 
-Research all 17 countries as the discovery pool, but do not force one story per country into the episode.
+Use a flexible news-roundup structure:
 
-Prioritise consequential, interesting and underreported developments from multiple countries and regions, across any subject.
-
-Compare candidate stories with the preceding six episodes. Avoid repetition unless there is a materially different local consequence, manifestation or interpretation.
-
-Sunday structure:
-1. Brief introduction and sources used.
-2. Concise stories organised by region or subject where useful.
-3. Further underreported discoveries.
+1. Introduction and sources used.
+2. Concise international stories, grouped where useful.
+3. Additional underreported developments.
 4. Closing summary.
 
-Sunday is informative rather than debate-led. Do not manufacture opposing arguments for every story.
+Prioritise information dissemination over debate.
 
-## Research and verification
+## 5. Research verification
 
-Default reporting window: preceding seven days.
+Aspiration: each substantive claim should be supported by identifiable reporting or primary evidence.
 
-Record article titles, publications, dates and URLs.
+Record article titles, outlet, publication dates and real URLs wherever available.
 
-Verify consequential facts using independent reporting or primary evidence where possible.
+It is more important that there is an attempt to reference which media outlet supports an argument than hard rules obsessing about the URL.
 
-Distinguish confirmed facts, allegations, forecasts, opinions and editorial interpretations.
+A source may be usable without a publisher-domain citation annotation.
 
-Do not count syndicated versions of the same report as independent corroboration.
+An LLM assertion alone is not proof that an article exists.
 
-Disclose missing evidence and source access limitations.
+Distinguish direct reporting from secondary references. Do not treat syndicated copies as independent corroboration or claim to have read inaccessible articles.
 
-Do not invent facts, reporting, quotations, publication dates or references.
+## 6. Failure rules
 
-If adequate research or verification is unavailable, fail the episode rather than publish unreliable narration.
+Missing search results, paywalls and access limitations do not automatically fail an episode. Continue with verified material and produce a shorter episode where appropriate.
 
-## Required outputs
+Fail only if no defensible verified story exists or technical problems prevent production.
 
-Produce five separate outputs:
+If no sources (defined as media outlet) can be sited for any argument, then the research should be deemed as failing. This should safeguard against LLM hallucination of arguments.
 
-1. Research findings with developments, evidence, references and publication dates.
-2. Source assessment documenting consultations, sources actually used, editorial framing and possible bias.
-3. Complete single-presenter spoken narration, saved as a UTF-8 text file.
-4. Markdown show notes with source titles, publication dates and URLs.
-5. Production estimates: word count, estimated narration duration and ElevenLabs character count.
+An unsuccessful search or inaccessible article does not prevent publication.
 
-Spoken narration must contain no URLs, Markdown, citation markers or production instructions.
+## 7. Source audit
 
-Narration filename:
-dayname-ddmmyy-news.txt
+For every research attempt, create:
 
-Use the Europe/London date and correct daily theme.
+`source-logs/DDMMYY.json`
 
-## Automated production rules
+Record each publication's name, domains, search query, search-call count, consulted URLs, cited URLs and outcome:
 
-Run at most once per Europe/London calendar day.
+- `found` — identifiable relevant reporting, including clearly identified secondary references.
+- `no_relevant_results` — completed search explicitly returned no identifiable relevant material.
+- `search_or_access_problem` — incomplete search, tool failure or insufficient information to verify results.
 
-Do not regenerate or publish a second episode for the same date.
+Track publisher-domain matches separately. Zero domain matches alone do not establish that no relevant results exist.
 
-After research, verification and script validation, automatically generate ElevenLabs audio without manual approval.
+Persist source logs to GitHub even if episode production fails. Evaluate publication performance using aggregated results across multiple days.
 
-Respect ElevenLabs credit limits and OpenAI API budget controls.
+## 8. Required outputs
 
-Do not automatically retry the full workflow after failure.
+Generate five separate outputs:
 
-Only publish after successful research validation and audio generation.
+1. Research findings with evidence and references.
+2. Source assessment covering consultations, material used, perspectives and potential bias.
+3. Complete single-presenter narration as UTF-8 plain text.
+4. Markdown show notes with article titles, dates and links.
+5. Word count, estimated narration duration and ElevenLabs character count.
 
-Maintain a seven-day retention window for published episodes.
+Name all publications actually relied upon in the narration introduction.
 
-Keep research, source assessments, show notes and narration separately.
+The narration file must contain spoken words only: no Markdown, URLs or production instructions.
 
-Support immediate disabling of the daily automation.
+**Filename:** `dayname-ddmmyy-news.txt`
 
-## Guiding principle
+Use the Europe/London calendar date and corresponding theme.
 
-Prioritise accuracy, relevance, intellectual curiosity, diversity of perspectives, international coverage and efficient resource use.
+## 9. Automation and publication
 
+- Run no more than once per Europe/London calendar day.
+- Never regenerate or publish a second episode for the same date.
+- Validate research and narration before audio generation.
+- Automatically generate ElevenLabs audio after successful validation, without additional approval.
+- Respect ElevenLabs credits and OpenAI API budgets.
+- Do not automatically retry the complete workflow after failure.
+- Publish audio script only after successful research validation and audio generation.
+- Retain published episodes for seven days.
+- Keep narration, research, source assessments and show notes separate.
+- Support immediate disabling of the daily automation.
+
+## 10. Governing rule
+
+**Search broadly. Verify carefully. Publish only where a position exists or news has been reported.**
+
+Do not sacrifice factual integrity to meet a source quota, achieve political balance or extend episode duration.
+
+The argument does not need to be even, it should convey where the majority of positions fall on one side of the argument, which should be articulated in the ‘Summary and media framing assessment’ Monday-Saturday.

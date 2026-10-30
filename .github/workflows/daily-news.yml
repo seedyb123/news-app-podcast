@@ -96,7 +96,6 @@ jobs:
         if: steps.episode-check.outputs.should_run == 'true'
         run: |
           test -s editorial-plan.md
-          test -s source-policy.md
           node --check generate-news.mjs
           node --check generate-podcast.mjs
           node --check publish-podcast.mjs
