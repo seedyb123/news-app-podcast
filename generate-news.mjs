@@ -82,7 +82,8 @@ const editorialPlan = (await readFile("editorial-plan.md", "utf8")) + "\n\n" + (
 await Promise.all([mkdir("scripts", { recursive: true }), mkdir(".news-runs", { recursive: true }), mkdir("source-logs", { recursive: true })]);
 const audit = { date: isoDate, theme: themes[day], generated_at: new Date().toISOString(),
   status: "started", search_targets: [], totals: {}, failure: null,
-  note: "Zero results means no cited URL on the target publication's domain was returned; it does not prove the publication published nothing." };
+  note: "No relevant results means a completed search explicitly returned none. Incomplete requests and lack of URL annotations are not evidence of publication failure." };
+let auditWrite = Promise.resolve();
 async function saveAudit() {
   audit.updated_at = new Date().toISOString();
   audit.totals = {
@@ -92,7 +93,9 @@ async function saveAudit() {
     found: audit.search_targets.filter(x => x.outcome === "found").length,
     search_or_access_problem: audit.search_targets.filter(x => x.outcome === "search_or_access_problem").length
   };
-  await writeFile(logFile, JSON.stringify(audit, null, 2) + "\n", "utf8");
+  const snapshot = JSON.stringify(audit, null, 2) + "\n";
+  auditWrite = auditWrite.then(() => writeFile(logFile, snapshot, "utf8"));
+  await auditWrite;
 }
 
 // Local anti-repeat guard. The committed workflow guard is authoritative.
@@ -108,6 +111,9 @@ try {
   throw error;
 }
 
+// Capture both the citations attached to answers and the search tool's
+// consulted-source records. A search-tool URL is evidence of a real source
+// being returned, but not proof that its full article body was accessed.
 function citations(response) {
   return [...new Set((response.output || [])
     .filter(item => item.type === "message")
@@ -116,11 +122,24 @@ function citations(response) {
     .filter(item => item.type === "url_citation" && typeof item.url === "string")
     .map(item => item.url))];
 }
+function consultedSources(response) {
+  return [...new Set((response.output || [])
+    .filter(item => item.type === "web_search_call")
+    .flatMap(item => item.action?.sources || [])
+    .map(item => typeof item === "string" ? item : item?.url)
+    .filter(url => typeof url === "string" && /^https?:\/\//i.test(url)))];
+}
 function domainMatches(url, domains) {
   try {
     const host = new URL(url).hostname.toLowerCase();
     return domains.some(domain => host === domain || host.endsWith(`.${domain}`));
   } catch { return false; }
+}
+function uniqueUrls(urls) {
+  return [...new Set(urls.filter(url => {
+    try { return ["https:", "http:"].includes(new URL(url).protocol); }
+    catch { return false; }
+  }))];
 }
 function sourceCount(response) {
   return response.output?.filter(item => item.type === "web_search_call").length ?? 0;
@@ -149,33 +168,46 @@ const researchNotes = new Map();
 async function searchPublication(target) {
   const record = { publication: target.name, domains: target.domains,
     attempted_at: new Date().toISOString(), search_calls: 0,
-    cited_urls: [], matched_urls: [], outcome: "search_or_access_problem", reason: "" };
+    cited_urls: [], consulted_urls: [], matched_urls: [], evidence_urls: [],
+    outcome: "search_or_access_problem", reason: "" };
   audit.search_targets.push(record);
   try {
-    const query = `You MUST use web_search to search reporting published by ${target.name} on ${target.domains.join(", ")} in the seven days up to ${isoDate}. Theme: ${themes[day]}. Search specifically this publication; don't substitute another outlet. Identify up to three consequential, verifiable relevant stories with article URLs, dates, and clearly attributed facts. When there are none, say NO RELEVANT RESULTS. Do not infer or invent any coverage. Do not claim access to paywalled text. Distinguish fact from commentary. Keep the research compact.`;
+    const query = `Use web_search to seek reporting, analysis or commentary originating from ${target.name} (${target.domains.join(", ")}) during the seven days up to ${isoDate}, relevant to ${themes[day]}. Search this publication explicitly; do not pretend to have accessed paywalled text. Briefly identify up to TWO actual dated items and what each item's identifiable author or publisher reports or argues. Where other outlets cite this publication's original reporting, clearly identify that indirect attribution and its source. Include item URLs when available. If no identifiable relevant item was found, say NO RELEVANT RESULTS. Do not manufacture articles, quotes or perspectives. Keep the answer brief: 150-250 words maximum.`;
     record.query = query;
     const response = await client.responses.create({
-      model, tools: [{ type: "web_search" }], max_output_tokens: 1700,
+      model, tools: [{ type: "web_search" }],
+      include: ["web_search_call.action.sources"],
+      max_output_tokens: 4500,
       input: query
     });
     record.search_calls = sourceCount(response);
     record.cited_urls = citations(response);
-    record.matched_urls = record.cited_urls.filter(url => domainMatches(url, target.domains));
-    if (response.status !== "completed" || !response.output_text?.trim() || record.search_calls < 1) {
+    record.consulted_urls = consultedSources(response);
+    record.evidence_urls = uniqueUrls([...record.cited_urls, ...record.consulted_urls]);
+    record.matched_urls = record.evidence_urls.filter(url => domainMatches(url, target.domains));
+
+    const text = (response.output_text || "").trim();
+    if (record.search_calls < 1 || response.status !== "completed" || !text) {
       record.reason = `status=${response.status}; calls=${record.search_calls}; incomplete=${response.incomplete_details?.reason ?? "none"}`;
-    } else if (!record.matched_urls.length) {
+    } else if (/^NO RELEVANT RESULTS\s*[.!]?$/i.test(text)) {
       record.outcome = "no_relevant_results";
-      record.reason = "No cited URLs from the requested publisher domain; coverage or access may still exist";
+      record.reason = "Completed search explicitly reported no identifiable relevant item";
+    } else if (record.evidence_urls.length === 0) {
+      record.reason = "Narrative returned without a consulted or cited URL; attribution could not be checked";
     } else {
+      // An indirect article can be evidence that somebody *attributed* a claim
+      // to the target; it is not proof we independently read its original.
       record.outcome = "found";
-      record.reason = "At least one publisher-domain citation returned";
+      record.reason = record.matched_urls.length
+        ? "Real returned sources include requested publisher domain"
+        : "Real returned sources found, but publisher origin is indirect/unconfirmed";
+      researchNotes.set(target.name, short(text, 4200));
     }
-    researchNotes.set(target.name, short(response.output_text, 4200));
   } catch (error) {
     record.reason = short(error.message, 240);
   }
   await saveAudit();
-  console.log(`${target.name}: ${record.outcome}, ${record.search_calls} search call(s), ${record.matched_urls.length} publisher URL(s)`);
+  console.log(`${target.name}: ${record.outcome}, ${record.search_calls} search call(s), ${record.evidence_urls.length} returned URL(s), ${record.matched_urls.length} publisher-domain URL(s)`);
   return record;
 }
 
@@ -198,15 +230,16 @@ try {
   for (let i = 0; i < targets.length; i += 3) {
     await Promise.all(targets.slice(i, i + 3).map(searchPublication));
   }
-  const verified = audit.search_targets.filter(item => item.outcome === "found");
-  if (!verified.length) throw new Error("No publisher-domain source citations were verified; refusing to invent an episode.");
+  const eligible = audit.search_targets.filter(item => item.outcome === "found");
+  if (!eligible.length) throw new Error("No identifiable source-backed research was obtained; refusing to invent an episode.");
 
-  // Only source results containing publisher-domain citations enter narration.
-  const evidence = verified.map(item => `PUBLICATION: ${item.publication}\nVERIFIED PUBLISHER URLs:\n${item.matched_urls.join("\n")}\nRESEARCH SUMMARY (claims must be checked against listed URLs):\n${researchNotes.get(item.publication) || ""}`).join("\n\n");
-  console.log(`Drafting narration using ${verified.length} publications with matched citations.`);
+  // Supply actual returned URL references, not URLs hallucinated in prose.
+  // Indirect reports must be described as indirect, not independently checked.
+  const evidence = eligible.map(item => `SEARCH TARGET: ${item.publication}\nORIGIN STATUS: ${item.reason}\nURLS RETURNED BY SEARCH TOOL OR CITATIONS:\n${item.evidence_urls.join("\n")}\nSOURCE RESEARCH NOTES (unverified statements must NOT be used):\n${researchNotes.get(item.publication) || ""}`).join("\n\n");
+  console.log(`Drafting narration using source records from ${eligible.length} searches.`);
   const draft = await client.responses.create({
     model, max_output_tokens: 10000,
-    input: `Write today's single-narrator British-English news podcast. Date: ${isoDate}. Theme: ${themes[day]}.\n\nEDITORIAL PLAN:\n${editorialPlan}\n\nVERIFIED SEARCH RECORDS:\n${evidence}\n\nPREVIOUS EPISODES:\n${previousSummaries.join("\n\n") || "None"}\n\nIMPORTANT: We attempted ${targets.length} source searches. Missing or inaccessible individual publications are NOT grounds to refuse or pad the episode. Work only with the supported, relevant material above; each factual story or attributed argument must connect to a listed publisher-domain URL. Do not invent events, quotes, perspectives, counterarguments or corroboration. Two legitimate sides are fine; do not manufacture a third. A single well-supported conclusion is also fine. Explain uncertainty and distinguish interpretation from fact. Only refuse if the available verified evidence is insufficient for ANY honest news episode; if so, begin exactly INSUFFICIENT VERIFIED RESEARCH and briefly explain why. Never refuse just because a roster publication had no result. Name only publications actually relied upon in the opening. Follow the editorial day's format; for Sunday use the international roundup format, not the weekday six-part structure. Short is fine; no minimum duration or word count. Maximum 22 minutes and 3300 words. Return spoken narration only, without headings, markdown, URLs or citations.`
+    input: `Write today's single-narrator British-English news podcast. Date: ${isoDate}. Theme: ${themes[day]}.\n\nEDITORIAL PLAN:\n${editorialPlan}\n\nVERIFIED SEARCH RECORDS:\n${evidence}\n\nPREVIOUS EPISODES:\n${previousSummaries.join("\n\n") || "None"}\n\nIMPORTANT: We attempted ${targets.length} source searches. Missing or inaccessible individual publications are NOT grounds to refuse or pad the episode. Work only with the supported, relevant material above; each story or attributed argument must trace to identifiable journalism evidenced by one of the returned URLs. A publisher-domain URL is helpful but NOT required; if an article from a different outlet references original reporting, attribute it as a secondary account and do not claim direct access to the original. Citations and consulted URLs establish source existence, not automatic correctness of every claim: omit any unsupported details. Do not mistake source-search technical failures for evidence that publications have no coverage. Do not invent events, quotes, perspectives, counterarguments or corroboration. Two legitimate sides are fine; do not manufacture a third. A single well-supported conclusion is also fine. Explain uncertainty and distinguish interpretation from fact. Only refuse if the available verified evidence is insufficient for ANY honest news episode; if so, begin exactly INSUFFICIENT VERIFIED RESEARCH and briefly explain why. Never refuse just because a roster publication had no result. Name only publications actually relied upon in the opening. Follow the editorial day's format; for Sunday use the international roundup format, not the weekday six-part structure. Short is fine; no minimum duration or word count. Maximum 22 minutes and 3300 words. Return spoken narration only, without headings, markdown, URLs or citations.`
   });
   if (draft.status !== "completed" || !draft.output_text?.trim()) {
     throw new Error(`Narration incomplete (status=${draft.status}; reason=${draft.incomplete_details?.reason ?? "none"}).`);

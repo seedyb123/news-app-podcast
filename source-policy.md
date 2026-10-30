@@ -20,17 +20,19 @@ A publication returning no relevant, identifiable results is not grounds to fail
 
 Never invent news events, facts, quotations, statistics, publications, evidence, or arguments. Every substantive claim and attribution must be grounded in real reporting or primary evidence. If research supports two credible perspectives, present two. Do not invent further sides to achieve numerical balance. If the evidence strongly supports one conclusion, say so; avoid false equivalence. Attribute genuine disagreement accurately, including disagreements about values rather than facts. Distinguish published opinion from independently corroborated reporting.
 
-## Source-performance records
+## Source provenance and performance records
 
-Write `source-logs/DDMMYY.json` every time the generator attempts research. Each publication's log records its name, domain, attempted query, observed web search call count, relevant publisher-domain citation URLs and one of:
+A genuine article or report from an identifiable publication can support an episode even if the OpenAI response did not attach a URL annotation from that publication's domain. The citation-annotation format is not an editorial eligibility rule. Whenever possible, retain real article URLs from the web search tool's consulted-source list and response citations. Do **not** accept the LLM's bare assertion that an article exists as proof. A consulted URL establishes a returned source, **not** that a complete paywalled article was read or that every claim in a summary is verified.
 
-- `found`: at least one cited URL matches the requested publisher's domain;
-- `no_relevant_results`: the search completed but no publisher-domain citation was returned;
-- `search_or_access_problem`: search was not completed, failed, or could not be verified.
+If a source at another outlet references the target publication's original reporting, distinguish that secondary reference from direct verification. Attribute arguments to their actual authors, and facts to the evidence available. Never fabricate a URL, article, publication date, quote, statistic, story, viewpoint or counterargument.
 
-The second status **does not prove the outlet published nothing**. Counts are conservative, observable search-result signals, not audits of everything published. Do not count citations from other outlets as results for a searched publication. Preserve logs in GitHub even if script generation fails, using a post-generation commit step that runs on failure.
+Write `source-logs/DDMMYY.json` every time the generator attempts research. Each publication's log includes name, domains, query, search call count, cited URLs, consulted URLs and one outcome:
 
-Over time, aggregate publication-level attempts and the `no_relevant_results` rate. Evaluate performance over multiple episodes before changing the roster; investigate paywalls and search tool limitations before concluding a source is ineffective. Searching a source does not mean using or endorsing it in the published episode.
+- `found`: the completed search returned identifiable URLs and relevant reporting, including secondary references clearly labelled as such;
+- `no_relevant_results`: the completed response explicitly reported no identifiable relevant material;
+- `search_or_access_problem`: an incomplete request, tool failure, missing text, missing consulted/cited URLs, or other inability to verify the search result.
+
+A zero publisher-domain match by itself **must never** be logged as `no_relevant_results`, or counted against a publication's effectiveness. Record domain matches separately as diagnostic information. Persist the audit to GitHub even if the episode later fails, and use aggregated multi-day evidence rather than isolated failures when considering roster changes.
 
 ## Publication limits
 
