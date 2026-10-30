@@ -78,7 +78,7 @@ const sunday = [
   { name: "Australia — ABC News", domains: ["abc.net.au"] }
 ];
 
-const editorialPlan = (await readFile("editorial-plan.md", "utf8")) + "\n\n" + (await readFile("source-policy.md", "utf8"));
+const editorialPlan = await readFile("editorial-plan.md", "utf8");
 await Promise.all([mkdir("scripts", { recursive: true }), mkdir(".news-runs", { recursive: true }), mkdir("source-logs", { recursive: true })]);
 const audit = { date: isoDate, theme: themes[day], generated_at: new Date().toISOString(),
   status: "started", search_targets: [], totals: {}, failure: null,
@@ -250,8 +250,18 @@ try {
   }
   const words = script.split(/\s+/).filter(Boolean).length;
   if (words < 80 || words > 3300 || /https?:\/\/|www\.|\[\d+\]|【|\*\*|```/.test(script)) {
-    throw new Error(`Narration validation failed (${words} words).`);
-  }
+const problems = [];
+if (words < 80) problems.push("too short");
+if (words > 3300) problems.push("too long");
+if (/https?:\/\/|www\./.test(script)) problems.push("URL present");
+if (/\[\d+\]/.test(script)) problems.push("numbered citation present");
+if (/【/.test(script)) problems.push("citation marker present");
+if (/\*\*/.test(script)) problems.push("Markdown bold present");
+if (/```/.test(script)) problems.push("code fence present");
+
+throw new Error(
+  `Narration validation failed (${words} words): ${problems.join(", ")}`
+);  }
   await writeFile(outputFile, script + "\n", { encoding: "utf8", flag: "wx" });
   audit.status = "script_created";
   audit.script_file = outputFile;
