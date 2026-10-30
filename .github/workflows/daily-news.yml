@@ -106,6 +106,17 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: node generate-news.mjs
 
+      - name: Preserve narration drafts and diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: narration-diagnostics-${{ github.run_id }}
+          path: |
+            scripts/*-raw-draft.txt
+            source-logs/*.json
+          if-no-files-found: ignore
+          retention-days: 7
+
       - name: Persist per-publication search audit even after script failure
         if: always() && steps.episode-check.outputs.should_run == 'true'
         shell: bash

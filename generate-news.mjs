@@ -244,24 +244,52 @@ try {
   if (draft.status !== "completed" || !draft.output_text?.trim()) {
     throw new Error(`Narration incomplete (status=${draft.status}; reason=${draft.incomplete_details?.reason ?? "none"}).`);
   }
-  const script = draft.output_text.trim().replace(/\r\n/g, "\n");
-  if (script.includes("INSUFFICIENT VERIFIED RESEARCH")) {
-    throw new Error(`No publishable evidence: ${short(script, 900)}`);
-  }
-  const words = script.split(/\s+/).filter(Boolean).length;
-  if (words < 80 || words > 3300 || /https?:\/\/|www\.|\[\d+\]|【|\*\*|```/.test(script)) {
-const problems = [];
-if (words < 80) problems.push("too short");
-if (words > 3300) problems.push("too long");
-if (/https?:\/\/|www\./.test(script)) problems.push("URL present");
-if (/\[\d+\]/.test(script)) problems.push("numbered citation present");
-if (/【/.test(script)) problems.push("citation marker present");
-if (/\*\*/.test(script)) problems.push("Markdown bold present");
-if (/```/.test(script)) problems.push("code fence present");
+  const originalDraft = draft.output_text.trim().replace(/\r\n/g, "\n");
 
-throw new Error(
-  `Narration validation failed (${words} words): ${problems.join(", ")}`
-);  }
+  // Preserve the original narration for diagnosing formatting failures.
+  const draftFile = outputFile.replace(/-news\.txt$/, "-raw-draft.txt");
+  if (draftFile === outputFile) {
+    throw new Error("Unexpected narration filename; cannot save raw draft.");
+  }
+
+  await writeFile(draftFile, originalDraft + "\n", {
+    encoding: "utf8",
+    flag: "wx"
+  });
+
+  if (originalDraft.includes("INSUFFICIENT VERIFIED RESEARCH")) {
+    throw new Error(`No publishable evidence: ${short(originalDraft, 900)}`);
+  }
+
+  // Remove presentation artifacts without rewriting the reporting.
+  const script = originalDraft
+    .replace(/https?:\/\/[^\s)]+|www\.[^\s)]+/g, "")
+    .replace(/\[\d+\]/g, "")
+    .replace(/【[^】]*】/g, "")
+    .replace(/\*\*/g, "")
+    .replace(/```[^\n]*\n?/g, "")
+    .replace(/[ \t]+$/gm, "")
+    .replace(/[ \t]{2,}/g, " ")
+    .trim();
+
+  const words = script.split(/\s+/).filter(Boolean).length;
+  const problems = [];
+
+  if (words < 80) problems.push("too short");
+  if (words > 3300) problems.push("too long");
+  if (/https?:\/\/|www\./.test(script)) problems.push("URL remains");
+  if (/\[\d+\]/.test(script)) problems.push("numbered citation remains");
+  if (/【/.test(script)) problems.push("citation marker remains");
+  if (/\*\*|```/.test(script)) problems.push("Markdown remains");
+
+  if (problems.length) {
+    throw new Error(
+      `Narration validation failed (${words} words): ${problems.join(", ")}`
+    );
+  }
+
+  console.log(`Narration formatting cleaned and validated (${words} words).`);
+
   await writeFile(outputFile, script + "\n", { encoding: "utf8", flag: "wx" });
   audit.status = "script_created";
   audit.script_file = outputFile;
