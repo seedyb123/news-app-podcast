@@ -1,3 +1,4 @@
+
 name: Daily News Podcast
 
 on:
@@ -43,7 +44,7 @@ jobs:
           elif [ -f "$ATTEMPT" ] && ! {
             [ "$DATE_CODE" = "301026" ] &&
             [ "${{ github.event_name }}" = "workflow_dispatch" ] &&
-            [ ! -f ".production-attempts/301026-manual-test.txt" ]
+            [ ! -f ".production-attempts/301026-final-test.txt" ]
           }; then
             echo "Today's production already attempted."
             echo "should_run=false" >> "$GITHUB_OUTPUT"
@@ -57,6 +58,7 @@ jobs:
         shell: bash
         run: |
           mkdir -p .production-attempts
+
           echo "Started $(date -u +%Y-%m-%dT%H:%M:%SZ)" \
             > "${{ steps.episode-check.outputs.attempt }}"
 
@@ -65,8 +67,8 @@ jobs:
 
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && \
              [ "$(TZ=Europe/London date +%d%m%y)" = "301026" ]; then
-            echo "One-off manual test started $(date -u +%Y-%m-%dT%H:%M:%SZ)" \
-              > .production-attempts/301026-manual-test.txt
+            echo "Final one-off test started $(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+              > .production-attempts/301026-final-test.txt
           fi
 
           git add -A -- .production-attempts
@@ -116,6 +118,7 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add -A -- source-logs
 
           if git diff --cached --quiet; then
