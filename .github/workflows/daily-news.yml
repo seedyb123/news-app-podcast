@@ -44,7 +44,7 @@ jobs:
           elif [ -f "$ATTEMPT" ] && ! {
             [ "$DATE_CODE" = "301026" ] &&
             [ "${{ github.event_name }}" = "workflow_dispatch" ] &&
-            [ ! -f ".production-attempts/301026-final-test.txt" ]
+            [ ! -f ".production-attempts/301026-provenance-test.txt" ]
           }; then
             echo "Today's production already attempted."
             echo "should_run=false" >> "$GITHUB_OUTPUT"
@@ -68,7 +68,7 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && \
              [ "$(TZ=Europe/London date +%d%m%y)" = "301026" ]; then
             echo "Final one-off test started $(date -u +%Y-%m-%dT%H:%M:%SZ)" \
-              > .production-attempts/301026-final-test.txt
+              > .production-attempts/301026-provenance-test.txt
           fi
 
           git add -A -- .production-attempts
