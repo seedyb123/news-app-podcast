@@ -41,11 +41,7 @@ jobs:
           if grep -Fq "news-app-${DAY}-${DATE_CODE}</guid>" feed.xml; then
             echo "Today's episode already published."
             echo "should_run=false" >> "$GITHUB_OUTPUT"
-          elif [ -f "$ATTEMPT" ] && ! {
-            [ "$DATE_CODE" = "301026" ] &&
-            [ "${{ github.event_name }}" = "workflow_dispatch" ] &&
-            [ ! -f ".production-attempts/301026-narration-cleanup-test.txt" ]
-          }; then
+          elif [ -f "$ATTEMPT" ]; then
             echo "Today's production already attempted."
             echo "should_run=false" >> "$GITHUB_OUTPUT"
           else
@@ -65,11 +61,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && \
-             [ "$(TZ=Europe/London date +%d%m%y)" = "301026" ]; then
-            echo "Final one-off test started $(date -u +%Y-%m-%dT%H:%M:%SZ)" \
-              > .production-attempts/301026-narration-cleanup-test.txt
-          fi
 
           git add -A -- .production-attempts
           git commit -m "Record production attempt ${{ steps.episode-check.outputs.episode }}"
