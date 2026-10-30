@@ -13,7 +13,19 @@
     <itunes:summary>Evidence-led news and analysis from diverse international sources.</itunes:summary>
     <itunes:explicit>false</itunes:explicit>
 
+    
     <item>
+      <title>Friday — Ideas &amp; Long-form Analysis</title>
+      <description>Daily news and analysis: Ideas &amp; Long-form Analysis.</description>
+      <pubDate>Fri, 30 Oct 2026 12:47:13 GMT</pubDate>
+      <guid isPermaLink="false">news-app-friday-301026</guid>
+      <enclosure
+        url="https://seedyb123.github.io/news-app-podcast/friday-301026-news.mp3"
+        length="14390795"
+        type="audio/mpeg"/>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+<item>
       <title>Thursday — Work, Society &amp; Policy</title>
       <description>A review of developments in work, society and public policy, including competing perspectives and underreported stories.</description>
       <pubDate>Thu, 29 Oct 2026 12:00:00 GMT</pubDate>
