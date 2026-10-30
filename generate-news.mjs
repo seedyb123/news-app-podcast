@@ -182,6 +182,22 @@ step. Do not create separate research files.
     !research.output_text?.trim() ||
     searchCalls < 1
   ) {
+    console.error("Research response diagnostics:");
+    console.error("Status:", research.status);
+    console.error(
+      "Incomplete reason:",
+      research.incomplete_details?.reason ?? "none"
+    );
+    console.error("Web search calls:", searchCalls);
+    console.error(
+      "Output types:",
+      research.output?.map(item => item.type) ?? []
+    );
+    console.error(
+      "Has research text:",
+      Boolean(research.output_text?.trim())
+    );
+
     throw new Error(
       "Research did not finish successfully."
     );
