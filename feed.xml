@@ -14,7 +14,19 @@
     <itunes:explicit>false</itunes:explicit>
 
     
+    
     <item>
+      <title>Saturday — Culture, Science &amp; Discovery</title>
+      <description>Daily news and analysis: Culture, Science &amp; Discovery.</description>
+      <pubDate>Sat, 31 Oct 2026 06:50:49 GMT</pubDate>
+      <guid isPermaLink="false">news-app-saturday-311026</guid>
+      <enclosure
+        url="https://seedyb123.github.io/news-app-podcast/saturday-311026-news.mp3"
+        length="14896526"
+        type="audio/mpeg"/>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+<item>
       <title>Friday — Ideas &amp; Long-form Analysis</title>
       <description>Daily news and analysis: Ideas &amp; Long-form Analysis.</description>
       <pubDate>Fri, 30 Oct 2026 12:47:13 GMT</pubDate>
