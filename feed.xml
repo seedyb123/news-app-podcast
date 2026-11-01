@@ -15,7 +15,19 @@
 
     
     
+    
     <item>
+      <title>Sunday — Missed News: Around the World</title>
+      <description>Daily news and analysis: Missed News: Around the World.</description>
+      <pubDate>Sun, 01 Nov 2026 06:55:27 GMT</pubDate>
+      <guid isPermaLink="false">news-app-sunday-011126</guid>
+      <enclosure
+        url="https://seedyb123.github.io/news-app-podcast/sunday-011126-news.mp3"
+        length="8270201"
+        type="audio/mpeg"/>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+<item>
       <title>Saturday — Culture, Science &amp; Discovery</title>
       <description>Daily news and analysis: Culture, Science &amp; Discovery.</description>
       <pubDate>Sat, 31 Oct 2026 06:50:49 GMT</pubDate>
