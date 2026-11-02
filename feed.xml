@@ -16,7 +16,19 @@
     
     
     
+    
     <item>
+      <title>Monday — World &amp; Geopolitics</title>
+      <description>Daily news and analysis: World &amp; Geopolitics.</description>
+      <pubDate>Mon, 02 Nov 2026 07:21:17 GMT</pubDate>
+      <guid isPermaLink="false">news-app-monday-021126</guid>
+      <enclosure
+        url="https://seedyb123.github.io/news-app-podcast/monday-021126-news.mp3"
+        length="13560310"
+        type="audio/mpeg"/>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+<item>
       <title>Sunday — Missed News: Around the World</title>
       <description>Daily news and analysis: Missed News: Around the World.</description>
       <pubDate>Sun, 01 Nov 2026 06:55:27 GMT</pubDate>
