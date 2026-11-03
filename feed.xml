@@ -17,7 +17,19 @@
     
     
     
+    
     <item>
+      <title>Tuesday — Business &amp; Economics</title>
+      <description>Daily news and analysis: Business &amp; Economics.</description>
+      <pubDate>Tue, 03 Nov 2026 07:04:49 GMT</pubDate>
+      <guid isPermaLink="false">news-app-tuesday-031126</guid>
+      <enclosure
+        url="https://seedyb123.github.io/news-app-podcast/tuesday-031126-news.mp3"
+        length="14919930"
+        type="audio/mpeg"/>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+<item>
       <title>Monday — World &amp; Geopolitics</title>
       <description>Daily news and analysis: World &amp; Geopolitics.</description>
       <pubDate>Mon, 02 Nov 2026 07:21:17 GMT</pubDate>
