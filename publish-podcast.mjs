@@ -103,13 +103,13 @@ const newItem = `
 const existingItems =
   feed.match(/<item>[\s\S]*?<\/item>/g) || [];
 
-const retainedItems = [
-  newItem,
-  ...existingItems
-].slice(0, MAX_EPISODES);
-
-const removedItems =
-  existingItems.slice(MAX_EPISODES - 1);
+// Research submissions share the existing feed but do not consume Daily slots.
+const isResearch = item => item.includes('<guid isPermaLink="false">escape-the-cave-research-v2.2:');
+let dailyCount = 0;
+const retainedItems = [newItem, ...existingItems].filter(item =>
+  isResearch(item) || ++dailyCount <= MAX_EPISODES
+);
+const removedItems = existingItems.filter(item => !retainedItems.includes(item));
 
 const oldFiles = removedItems
   .map(item => {
