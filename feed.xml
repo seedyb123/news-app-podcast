@@ -18,7 +18,39 @@
     
     
     
-    <item>
+        <item>
+      <title>Global Concrete usage</title>
+      <description>How much concrete does the world use, and when is it worth the cost? This episode compares ready-mix and cement figures from China, India, Vietnam, the United States and Türkiye, explaining why production figures aren’t a measure of domestic use. From kiln emissions to sand dredging in the Mekong Delta, it weighs concrete’s environmental costs against the reasons engineers still rely on it for bridges, foundations and water infrastructure.
+
+## How to read the numbers
+Ready-mix figures cover only part of the concrete market, and the country examples are from different years. Cement production is a separate measure: it includes material destined for products such as mortar and does not account for where traded cement is ultimately used. The episode’s emissions total covers direct cement-making emissions from chemical reactions and kiln fuels, not the full concrete supply chain.
+
+## Sources
+[1] Takuma Watari and colleagues, iScience, [‘Growing role of concrete in sand and climate crises’](https://pmc.ncbi.nlm.nih.gov/articles/PMC10214720/) (2023). Peer-reviewed estimate of global concrete and mortar production in 2020.
+
+[2] China Concrete and Cement Products Association, [‘Ready-Mixed Concrete Industry Development Report of the Year 2025’](https://en.chinaconcrete.com.cn/cnt_517.html); US National Ready Mixed Concrete Association, ‘Estimated Ready Mixed Concrete Production By State – 2024’; Turkish Ready Mixed Concrete Association, ‘Türkiye Hazır Beton Sektörü İstatistikleri – 2024’, drawing on European Ready Mixed Concrete Organisation data. The US estimate is rounded after conversion from cubic yards.
+
+[3] US Geological Survey, [‘Cement’, Mineral Commodity Summaries 2026](https://pubs.usgs.gov/periodicals/mcs2026/mcs2026.pdf) (2026); Vietnam Ministry of Industry and Trade, ‘Overview Report on Vietnam’s Domestic Market 2025’, for the domestic cement consumption estimate.
+
+[4] Robbie Andrew, [‘Global CO₂ emissions from cement production’](https://zenodo.org/records/22178444) (2026 data release). The process and fossil-fuel estimates are rounded separately.
+
+[5] UN Environment Programme, [‘Sand and Sustainability: 10 Strategic Recommendations to Avert a Crisis’](https://wedocs.unep.org/items/9ec225c4-5a9f-44d0-a560-46e0c8264003) (2022). Covers erosion, habitat damage and other consequences of sand extraction.
+
+[6] WWF and partners, ‘Sand Budget for Viet Nam Mekong Delta’ (August 2023); Brice Pedroletti and Adrienne Surprenant, Le Monde, ‘Water rises and land sinks in Vietnam’s Mekong Delta’ (1 November 2025). Le Monde cites the sand budget for the extraction figures and adds field reporting on the delta’s sediment shortage; it is not a second estimate of extraction.
+
+[7] Sabbie Miller, Arpad Horvath and Paulo Monteiro, Nature Sustainability, [‘Impacts of booming concrete production on water resources worldwide’](https://www.nature.com/articles/s41893-017-0009-5) (2018). The water figure refers to estimated industrial withdrawals in 2012, not current withdrawals or all global water use.
+
+[8] Intergovernmental Panel on Climate Change, [‘Industry’, Sixth Assessment Report, Working Group III](https://www.ipcc.ch/report/ar6/wg3/chapter/chapter-11/) (2022). Cement chemistry, material efficiency and industrial decarbonisation options.
+
+[9] UN Environment Programme and Yale Center for Ecosystems + Architecture, [‘Building Materials and the Climate: Constructing a New Future’](https://www.unep.org/pt-br/node/35039) (2023). A framework for avoiding unnecessary new material, shifting to suitable alternatives and improving conventional materials.
+
+[10] Associated Press, [‘LA fires charred homes into piles of metal and concrete. By recycling them, they’re given new life’](https://apnews.com/article/la-fires-eaton-fire-steel-concrete-trees-recycling-rebuilding-b40594fef233399c4c9e1fe62a83aa85) (18 July 2025). A reported example of demolition concrete being recovered for reuse.</description>
+      <pubDate>Fri, 20 Nov 2026 15:53:12 GMT</pubDate>
+      <guid isPermaLink="false">escape-the-cave-research-v2.2:2c6c992b-63ef-4d96-8708-1e6721dbb242</guid>
+      <enclosure url="https://seedyb123.github.io/news-app-podcast/research-2c6c992b-63ef-4d96-8708-1e6721dbb242.mp3" length="3779230" type="audio/mpeg"/>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+<item>
       <title>Tuesday — Business &amp; Economics</title>
       <description>Daily news and analysis: Business &amp; Economics.</description>
       <pubDate>Tue, 03 Nov 2026 07:04:49 GMT</pubDate>
