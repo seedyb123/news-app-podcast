@@ -18,7 +18,29 @@
     
     
     
-            <item>
+                <item>
+      <title>Mastry by Multiverse</title>
+      <description>Can an AI coach teach employees a skill they can still use once the coach is gone? This buyer’s review traces Multiverse’s evolution from apprenticeships to enterprise software, examines what is publicly known about Mastry’s architecture, and compares it with Section, Microsoft Copilot and other alternatives. Early feedback suggests the diagnostic can uncover barriers to adoption, but it does not prove that coaching improves skills. We explain what to verify before sharing workplace data and how to run a pilot that distinguishes faster output from lasting learning.
+
+# Mastry by Multiverse: Can an AI coach teach people to work differently?
+**Runtime:** Approximately 10–11 minutes. **Evidence cut-off:** 20 November 2026.
+
+**Buyer verdict:** Shortlist for a controlled pilot, not a workforce-wide rollout. Mastry’s proposition is to link diagnosis, coaching on live tasks and evidence of applied skill. The pilot should test what Mastry adds over an existing AI assistant and whether employees can apply what they learnt on a different task without Mae.
+
+## Sources and what they establish
+- **Product and availability:** Multiverse’s [launch announcement](https://www.multiverse.io/blog/multiverse-launches-mastry-single-platform-ai-ambition-ai-adoption) (14 October 2026) describes the three-stage flow. Eligible development partners could join a waitlist at the research cut-off; full launch was planned for early 2027, not confirmed. Its [Workforce 2030 recap](https://www.multiverse.io/blog/workforce-2030-key-takeaways) (30 October 2026) is the source for the meeting-preparation demonstration and Sarah Gallo’s account of the News UK diagnostic pilot. Neither establishes full-product outcomes.
+- **Technical architecture:** Multiverse’s [diagnostic overview](https://www.multiverse.io/blog/leaders-precise-insights-every-department-ai-capability-adoption-barriers) (12 October 2026) describes the inputs and reporting. The [AI Engineering Manager vacancy](https://jobs.ashbyhq.com/multiverse/9cd634af-ef58-4f76-8c41-06ef5e87d02c) describes retrieval, assessment scoring and a move towards dedicated services in the broader engineering estate, not a verified Mastry stack. ‘Meet the minds behind Mastry: Inside Multiverse’s AI engineering team’ (20 November 2026) identifies the team but does not provide a deployment diagram. The product-specific Trust Centre FAQs were listed but their contents were not verified.
+- **Company and training:** [Index Ventures’ Multiverse profile](https://www.indexventures.com/companies/whitehat/) provides investor context. Ufi VocTech Trust covered the WhiteHat rebrand (26 January 2021); TechCrunch reported on the Series D (8 June 2022) and Searchlight purchase (8 April 2024). Multiverse announced StackFuel on 27 January 2026 and its funding round on 15 May 2026. Its [Atlas coaching announcement](https://www.multiverse.io/blog/launching-on-demand-coaching-powered-by-ai) and [2026 Impact Report announcement](https://www.multiverse.io/blog/announcing-our-2026-impact-report) concern the training business. [Ofsted’s inspection report](https://reports.ofsted.gov.uk/provider/33/1276443) (published 21 May 2026) supplies an independent view; the company set out its response in ‘Understanding Multiverse completion rates — and why context matters’ (20 May 2026).
+- **Competitive alternatives:** [Section’s AI Proficiency Assessment](https://proficiencytest.sectionai.com/), Section Coach and Section HQ offer the closest functional comparison. Microsoft Learn’s Copilot release notes (27 October 2026) and Copilot Dashboard documentation describe a native alternative for Microsoft-centred buyers. WalkMe’s technical overview and Accenture’s ‘Accenture Invests in Workhelix to Help Organizations Prepare their Workforces for Generative AI’ address adjacent workflow and transformation needs. These are supplier descriptions, not comparative benchmarks.
+- **Launch coverage and demand:** Joseph Gabriel Lagonsin’s CMOtech coverage (27 October 2026) also ran on IT Brief; that is not separate corroboration. Sam Allcock covered the launch in Daily Tech Times (9 November 2026). Neither outlet independently tested the product. The UK government’s [AI adoption survey 2026](https://www.gov.uk/government/publications/ai-adoption-survey-2026) (29 October 2026) documents the broader skills barrier, not demand for Mastry.
+
+**Before piloting:** Request host-specific permissions, data flows, retention rules, hosting and isolation details, and clarity on who can see individual evidence. Keep pilot data out of performance management. Compare quality-adjusted time and independent task performance against existing tools and training, then account for licensing, coaching and staff time.</description>
+      <pubDate>Fri, 20 Nov 2026 19:07:28 GMT</pubDate>
+      <guid isPermaLink="false">escape-the-cave-research-v2.2:80b9c653-1561-4d61-ae15-e1e933593514</guid>
+      <enclosure url="https://seedyb123.github.io/news-app-podcast/research-80b9c653-1561-4d61-ae15-e1e933593514.mp3" length="10309842" type="audio/mpeg"/>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+<item>
       <title>New Serbian Government</title>
       <description>Serbia’s Student List won an outright parliamentary majority in October 2026, ending fourteen years of dominance by the Serbian Progressive Party. Yet as of 20 November, the old cabinet was still in office as caretaker. This episode explains how a movement organised through campus assemblies won control of parliament, what the constitution requires before it can govern, and what Nepal, Chile and Thailand reveal about the difference between winning an election and taking office.
 
