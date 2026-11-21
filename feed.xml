@@ -18,7 +18,72 @@
     
     
     
-                    <item>
+                        <item>
+      <title>Quantum physics</title>
+      <description>Send electrons through two slits one at a time and they build up a striped pattern. Record which slit each electron takes and the stripes disappear. Why? This beginner’s guide uses that experiment to explain superposition, uncertainty and entanglement, tracing the ideas from Planck and Einstein to the researchers testing quantum physics today. Along the way, we’ll see how the same theory helps us read starlight, measure gravity with atomic clocks and build quantum computers—and where the evidence still leaves questions open. No equations or prior physics needed.
+
+# Quantum physics: From two slits to the early universe
+**Estimated listening time:** 10–11 minutes. No prior physics needed.
+
+## What you’ll learn
+- **Quantisation:** Atoms have specific allowed energies. The gaps between them determine which frequencies of light atoms can emit or absorb.
+- **Superposition and uncertainty:** Interference shows why quantum alternatives aren’t just ordinary possibilities we happen not to know about. Uncertainty limits how sharply position and momentum can both be specified in the same state.
+- **Entanglement:** Bell tests rule out local hidden-instruction explanations under the test’s assumptions, but do not enable faster-than-light messages.
+- **What remains open:** Decoherence helps explain why interference is hard to see in everyday objects, but doesn’t settle the measurement problem. Testing quantum systems in gravity does not establish that gravity itself is quantised.
+- **What counts as progress:** Improving error correction on quantum hardware is a different benchmark from outperforming a conventional computer on a useful task.
+
+## Sources keyed to the master script
+### Foundations and contributors
+[1] Bach and colleagues, [‘Controlled double-slit electron diffraction’](https://doi.org/10.1088/1367-2630/15/3/033018), *New Journal of Physics* (2013). The original experiment builds up an interference pattern from individual electron hits.
+
+[2] [‘Measurement-induced decoherence and information in double-slit interference’](https://www.nist.gov/publications/measurement-induced-decoherence-and-information-double-slit-interference), *American Journal of Physics* / NIST (2016). Explains the link between physical path information and loss of interference.
+
+[3] [‘The Tumultuous Birth of Quantum Mechanics’](https://physics.aps.org/articles/v18/24), *Physics*, American Physical Society (2025). A history of the theory’s development with links to foundational papers. See also the APS centenary chronology, [‘Celebrating the First Century of Quantum Physics and Preparing for the Next One’](https://doi.org/10.1103/PhysRevLett.134.150001), *Physical Review Letters* (2025).
+
+[4] [‘October 1925: Einstein and Bose predict Bose-Einstein condensation’](https://www.aps.org/apsnews/2005/10/this-month-in-physics-history), *APS News* (October 2005); and [‘Quantum Milestones, 1928: The Dirac Equation Unifies Quantum Mechanics and Special Relativity’](https://physics.aps.org/articles/v18/20), *Physics*, American Physical Society (2025).
+
+[5] [‘The Relation of Wave and Particle Viewpoints’](https://www.feynmanlectures.caltech.edu/III_02.html), *The Feynman Lectures on Physics*, Vol. III, ch. 2, Caltech. Further reading on the link between a wave packet and the position–momentum uncertainty relation.
+
+[6] Chien-Shiung Wu and colleagues, [‘Experimental Test of Parity Conservation in Beta Decay’](https://doi.org/10.1103/PhysRev.105.1413), *Physical Review* (15 February 1957). The original paper on the failure of mirror symmetry in this decay.
+
+### Entanglement and measurement
+[7] Albert Einstein, Boris Podolsky and Nathan Rosen, [‘Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?’](https://doi.org/10.1103/PhysRev.47.777), *Physical Review* (15 May 1935).
+
+[8] John Bell, [‘On the Einstein Podolsky Rosen paradox’](https://doi.org/10.1103/PhysicsPhysiqueFizika.1.195), *Physics Physique Fizika* (1964); and the Nobel Prize’s [2022 Physics Prize announcement](https://www.nobelprize.org/prizes/physics/2022/press-release/) (4 October 2022), describing the work of Clauser, Aspect and Zeilinger.
+
+[9] Hensen and colleagues, [‘Loophole-free Bell inequality violation using electron spins separated by 1.3 kilometres’](https://www.nature.com/articles/nature15759), *Nature* (21 October 2015). The Delft-led experiment addressed the locality and detection loopholes together; it did not eliminate the need for assumptions about the independence of the measurement settings.
+
+[10] Maximilian Schlosshauer, [‘Decoherence, the measurement problem, and interpretations of quantum mechanics’](https://doi.org/10.1103/RevModPhys.76.1267), *Reviews of Modern Physics* (2005). A review of what decoherence explains and what it leaves open.
+
+### From starlight to cosmology
+[11] NASA Science, [‘Spectroscopy 101 – How Absorption and Emission Spectra Work’](https://science.nasa.gov/mission/webb/science-overview/science-explainers/spectroscopy-101-how-absorption-and-emission-spectra-work/). An illustrated explanation of how astronomers identify chemical elements from light.
+
+[12] CERN, [‘The Standard Model’](https://home.cern/science/physics/standard-model/). A guide to the particles and interactions it describes, and why gravity sits outside it.
+
+[13] ATLAS Collaboration, CERN, [‘The Higgs boson: a landmark discovery’](https://atlas.cern/Discover/Physics/Higgs). Background on the independent ATLAS and CMS observations announced in 2012.
+
+[14] NASA Science, [‘Big Bang and the Evolution of the Universe’](https://science.nasa.gov/astrophysics/programs/physics-of-the-cosmos/big-bang-and-the-evolution-of-the-universe/). A guide to the early universe, inflation and the cosmic microwave background.
+
+### Quantum effects at larger scales and in technology
+[15] Royal Swedish Academy of Sciences, [2025 Physics Nobel Prize announcement](https://www.nobelprize.org/uploads/2025/10/press-physicsprize2025.pdf) (7 October 2025). The award recognised experiments on tunnelling and energy quantisation in an electrical circuit; the experiments themselves date to the 1980s.
+
+[16] Associated Press, [‘Three scientists at US universities win Nobel Prize in physics for advancing quantum technology’](https://apnews.com/article/nobel-prize-physics-e74ee2acf652259cf268cc1d48873e14) (7 October 2025). Reporting and expert context on the award, not a replication of the experiments.
+
+[17] Pedalino and colleagues, [‘Probing quantum mechanics with nanoparticle matter-wave interferometry’](https://www.nature.com/articles/s41586-025-09917-9), *Nature* (21 January 2026). The original report on interference with sodium nanoparticles.
+
+[18] *Live Science*, [reporting on the sodium nanoparticle experiment](https://www.livescience.com/physics-mathematics/quantum-physics/physicists-push-thousands-of-atoms-to-a-schrodingers-cat-state-bringing-the-quantum-world-closer-to-reality-than-ever-before) (3 February 2026), includes an interview with lead researcher Sebastian Pedalino. It covers the same experiment as source 17.
+
+[19] Bothwell and colleagues, [‘Resolving the gravitational redshift across a millimetre-scale atomic sample’](https://www.nature.com/articles/s41586-021-04349-7), *Nature* (16 February 2022). A clock measurement of gravity’s effect on frequency, not a demonstration that gravity is quantum.
+
+[20] US National Institute of Standards and Technology, [‘A Quantum Leap Forward: How Tiny Particles Can Bring Us Exciting New Tech’](https://www.nist.gov/blogs/taking-measure/quantum-leap-forward-how-tiny-particles-can-bring-us-exciting-new-tech) (18 June 2025). An accessible overview of quantum technologies.
+
+[21] Perlin and colleagues, [‘Fault-Tolerant Execution of Error-Corrected Quantum Algorithms’](https://doi.org/10.1103/gnq3-c2df), *Physical Review X* (19 November 2026). Compares protected and unprotected circuits on trapped-ion hardware, not quantum hardware against the best conventional computer.</description>
+      <pubDate>Sat, 21 Nov 2026 08:28:15 GMT</pubDate>
+      <guid isPermaLink="false">escape-the-cave-research-v2.2:5dee17cd-d921-407e-862f-934c95598742</guid>
+      <enclosure url="https://seedyb123.github.io/news-app-podcast/research-5dee17cd-d921-407e-862f-934c95598742.mp3" length="10070769" type="audio/mpeg"/>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+<item>
       <title>M&amp;S</title>
       <description>Marks &amp; Spencer wants to win more of Britain’s weekly grocery shop. This episode traces a decade of Food growth and examines what has changed behind the shelves, from bringing logistics in-house to improving stock forecasts and investing in automated distribution. It also asks what the cyberattack revealed about those efficiencies, how Food’s performance compares with fashion and Ocado Retail, and whether the shares offer good value. Figures and valuation are assessed as at 20 November 2026.
 
