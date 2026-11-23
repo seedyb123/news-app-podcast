@@ -18,7 +18,35 @@
     
     
     
-                        <item>
+                            <item>
+      <title>Learning science</title>
+      <description>When should a teacher explain, ask a question or let learners try a problem first? This episode outlines four pillars of learning science: prior knowledge, durable memory, feedback and self-regulation, and applying knowledge in new situations. It uses Plato’s geometry dialogue to explain the Socratic method, then compares it with explicit instruction, guided inquiry, productive failure and peer instruction. The focus is on what the evidence can tell us about each approach, and what remains uncertain.
+
+## Learning science: the Socratic method and its alternatives
+
+**Running time:** Approximately 6 minutes. The episode distinguishes three outcomes: remembering material, explaining the reasoning behind it, and applying it independently to a new problem.
+
+### Sources keyed to the master script
+
+1. National Academies of Sciences, Engineering, and Medicine (2018), [*How People Learn II: Learners, Contexts, and Cultures*](https://www.nationalacademies.org/read/24783). Consensus report on prior knowledge, memory, motivation and self-regulation.
+2. US Institute of Education Sciences (2007), [*Organizing Instruction and Study to Improve Student Learning*](https://ies.ed.gov/ncee/wwc/Docs/PracticeGuide/20072004.pdf). Practice guide on worked examples, spacing, quizzes and explanatory questions.
+3. John Sweller and Graham A. Cooper (1985), [“The Use of Worked Examples as a Substitute for Problem Solving in Learning Algebra”](https://doi.org/10.1207/s1532690xci0201_3), *Cognition and Instruction*. The experiments tested performance on problems sharing the structure of the worked examples.
+4. Henry L. Roediger III and Jeffrey D. Karpicke (2006), [“Test-Enhanced Learning: Taking Memory Tests Improves Long-Term Retention”](https://doi.org/10.1111/j.1467-9280.2006.01693.x), *Psychological Science*. Experiments comparing repeated study and retrieval at different test delays.
+5. Sterre K. Ruitenburg and colleagues (2026), [“A Meta-Analysis of the Effectiveness and Boundary Conditions of Retrieval Practice, Distributed Practice, and Interleaved Practice in Authentic School Classrooms”](https://link.springer.com/article/10.1007/s10648-026-10225-5), *Educational Psychology Review*. Pooled evidence from primary and secondary classrooms.
+6. Benedikt Wisniewski, Klaus Zierer and John Hattie (2020), [“The Power of Feedback Revisited: A Meta-Analysis of Educational Feedback Research”](https://pmc.ncbi.nlm.nih.gov/articles/PMC6987456/), *Frontiers in Psychology*. The effects of feedback vary with the information it provides.
+7. Plato, [*Meno*, sections 82b–85b](https://adfonteslibrary.org/work-plato-meno). Primary text for the square-doubling dialogue.
+8. Andrea Paula Goldin and colleagues (2017), [“Producing or reproducing reasoning? Socratic dialog is very effective, but only for a few”](https://pmc.ncbi.nlm.nih.gov/articles/PMC5363905/), *PLOS ONE*. A small study adapting Plato’s dialogue; it did not compare the dialogue with an alternative lesson.
+9. Ard W. Lazonder and Ruth Harmsen (2016), [“Meta-Analysis of Inquiry-Based Learning: Effects of Guidance”](https://doi.org/10.3102/0034654315627366), *Review of Educational Research*. A synthesis on the benefits of support during inquiry.
+10. Tanmay Sinha and Manu Kapur (2021), [“When Problem Solving Followed by Instruction Works: Evidence for Productive Failure”](https://journals.sagepub.com/doi/10.3102/00346543211019105), *Review of Educational Research*. Compares problem-first and instruction-first sequences.
+11. Michelle K. Smith and colleagues (2011), [“Combining Peer Discussion with Instructor Explanation Increases Student Learning from In-Class Concept Questions”](https://pmc.ncbi.nlm.nih.gov/articles/PMC3046888/), *CBE—Life Sciences Education*. The study measured immediate performance on a related question in two university genetics courses.
+12. Education Endowment Foundation, [*Dialogic Teaching* trial](https://educationendowmentfoundation.org.uk/projects-and-evaluation/projects/dialogic-teaching). Includes the 2017 evaluation and 2019 follow-up of a broader classroom-talk programme, not a stand-alone test of the Socratic method.
+13. Albert Stumm (30 September 2026), [“Cramming for exams? Experts weigh in on how to study better”](https://apnews.com/article/b42ae895d418351dcfd001747869c21c), Associated Press. Practical reporting on study habits, not an independent test of their effectiveness.</description>
+      <pubDate>Mon, 23 Nov 2026 09:57:18 GMT</pubDate>
+      <guid isPermaLink="false">escape-the-cave-research-v2.2:dd21214c-495d-4d0d-a9de-30ed46a1d46d</guid>
+      <enclosure url="https://seedyb123.github.io/news-app-podcast/research-dd21214c-495d-4d0d-a9de-30ed46a1d46d.mp3" length="5623683" type="audio/mpeg"/>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+<item>
       <title>Quantum physics</title>
       <description>Send electrons through two slits one at a time and they build up a striped pattern. Record which slit each electron takes and the stripes disappear. Why? This beginner’s guide uses that experiment to explain superposition, uncertainty and entanglement, tracing the ideas from Planck and Einstein to the researchers testing quantum physics today. Along the way, we’ll see how the same theory helps us read starlight, measure gravity with atomic clocks and build quantum computers—and where the evidence still leaves questions open. No equations or prior physics needed.
 
