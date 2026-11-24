@@ -18,7 +18,34 @@
     
     
     
-                                    <item>
+                                        <item>
+      <title>Weather in Scotland</title>
+      <description>One-off briefing on how Scotland’s weather changed from 1926 to 2025
+
+One-off briefing on how Scotland’s weather changed from 1926 to 2025. This five-minute scientific report uses long-term records to explain why Scotland can have wetter winters and still face water shortages. It also looks at warming, fewer frost days and declining snow cover at Highland study sites, and separates what has been measured from what climate models project.
+
+## Findings and method
+The century review covers 1926–2025. It compares averages for 1926–1955 and 1996–2025, rather than fitting a trend across all 100 years. Between those two periods, Scotland’s mean annual temperature rose from 7.15°C to 7.87°C and average annual precipitation rose from about 1,403 to 1,565 millimetres. Winter (December–February) precipitation increased by about 22%, compared with about 2% in summer (June–August). The frost comparison uses different windows: 1931–1960 and 2016–2025. The Highland satellite study measures snow cover at nine sites, not snowfall across Scotland.
+
+## Sources
+1. Met Office, HadUK-Grid: [Scotland mean air temperature series](https://www.metoffice.gov.uk/pub/data/weather/uk/climate/datasets/Tmean/date/Scotland.txt). Source for the period averages and the national annual mean.
+2. Met Office, HadUK-Grid: [Scotland precipitation series](https://www.metoffice.gov.uk/pub/data/weather/uk/climate/datasets/Rainfall/date/Scotland.txt). Source for annual, winter and summer rainfall comparisons.
+3. Mike Kendon and colleagues, [State of the UK Climate in 2025](https://rmets.onlinelibrary.wiley.com/doi/10.1002/joc.70470), *International Journal of Climatology*, 14 July 2026. Places the Scottish figures in the wider UK record and uses different comparison periods for its rainfall assessment.
+4. Met Office, [UK Climate Extremes](https://www.metoffice.gov.uk/research/climate/maps-and-data/uk-climate-extremes). Lists the 34.8°C Scottish station record set at Charterhall on 19 July 2022.
+5. Intergovernmental Panel on Climate Change, [AR6 Synthesis Report: Summary for Policymakers](https://www.ipcc.ch/report/ar6/syr/summary-for-policymakers/), 2023. Assesses the evidence for human-caused global warming.
+6. Met Office, [Storm Babet](https://www.metoffice.gov.uk/binaries/content/assets/metofficegovuk/pdf/weather/learn-about/uk-past-events/interesting/2023/2023_08_storm_babet.pdf), October 2023 event assessment. Documents rainfall totals and flooding at Brechin.
+7. Associated Press, *Storm Hits Northern Europe, Killing at Least 4 People*, 21 October 2023. Contemporary reporting on the Brechin evacuations.
+8. Scottish Environment Protection Agency, [Autumn Water Situation Report 2025](https://www.sepa.org.uk/water-scarcity/water-scarcity-seasonal-reports/autumn-water-situation-report-2025). Documents the dry water year in eastern Scotland and contrasts conditions across the country.
+9. World Weather Attribution, [Autumn and winter storm rainfall in the UK and Ireland was made about 20% heavier by human-caused climate change](https://www.worldweatherattribution.org/autumn-and-winter-storms-over-uk-and-ireland-are-becoming-wetter-due-to-climate-change/), 22 May 2024. The estimate applies to rainfall on stormy days across the study region, not to Storm Babet alone or to wind strength.
+10. Benedict D. Spracklen and Dominick V. Spracklen, [Decline of Late Spring and Summer Snow Cover in the Scottish Highlands from 1984 to 2022: A Landsat Time Series](https://www.mdpi.com/2072-4292/15/7/1944), *Remote Sensing*, 6 April 2023.
+11. Met Office, HadUK-Grid: [Scotland air-frost days series](https://www.metoffice.gov.uk/pub/data/weather/uk/climate/datasets/AirFrost/date/Scotland.txt).
+12. Adaptation Scotland, [Climate Projections for Scotland: Summary](https://adaptation.scot/app/uploads/2025/08/low-res-6440-climate-projections-report-aug-25.pdf), 2025. Summarises projected seasonal changes under different emissions pathways.</description>
+      <pubDate>Tue, 24 Nov 2026 10:55:45 GMT</pubDate>
+      <guid isPermaLink="false">escape-the-cave-research-v2.2:d8e758dc-728a-4bc6-848e-9fd1a5b19b18</guid>
+      <enclosure url="https://seedyb123.github.io/news-app-podcast/research-d8e758dc-728a-4bc6-848e-9fd1a5b19b18.mp3" length="4483073" type="audio/mpeg"/>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+<item>
       <title>Padel</title>
       <description>One-off briefing on the rise and economics of padel
 
