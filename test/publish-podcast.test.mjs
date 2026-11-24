@@ -178,3 +178,17 @@ test('an already absent expired Daily audio file does not prevent publication', 
   assert.equal(result.status, 0, result.stderr);
   assert.equal(dailyItems(await app.feed()).length, 7);
 });
+
+
+test('future Daily publications retain revised channel identity and existing Research HTML byte-for-byte', async t => {
+  const study = research(1);
+  study.xml = study.xml.replace('Original research notes &amp; references.', '&lt;p&gt;&lt;strong&gt;One-off briefing on evidence&lt;/strong&gt;&lt;/p&gt;\n\n&lt;p&gt;Summary.&lt;/p&gt;');
+  const header = '<?xml version="1.0"?><rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"><channel><title>Escape the Cave</title><itunes:author>Hixet Productions</itunes:author><itunes:image href="https://example.com/art.jpg"/>';
+  const app = await fixture(t, [study], { feed: header + study.xml + '</channel></rss>' });
+  const result = app.run();
+  assert.equal(result.status, 0, result.stderr);
+  const updated = await app.feed();
+  assert.ok(updated.startsWith(header));
+  assert.ok(updated.includes(study.xml));
+  assert.deepEqual(await app.file(study.filename), oldAudio);
+});
